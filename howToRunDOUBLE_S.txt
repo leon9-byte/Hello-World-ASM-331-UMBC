@@ -1,0 +1,10 @@
+gcc -nostdlib -no-pie double.s -o double
+
+  usually error messages:  
+    double.s: Assembler messages:
+    double.s: Warning: end of file not at end of a line; newline inserted
+
+./double [number_here]
+
+Output:
+  The double is: [number_here * 2]
