@@ -1,0 +1,5 @@
+➜  Assembly gcc -nostdlib -no-pie double.s -o double
+double.s: Assembler messages:
+double.s: Warning: end of file not at end of a line; newline inserted
+➜  Assembly ./double 7
+The double is: 14
