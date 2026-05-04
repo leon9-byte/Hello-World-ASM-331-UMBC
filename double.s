@@ -18,14 +18,14 @@ _start:
 1:
     movzbq (%rsi), %rcx
     cmp $0, %rcx
-    je 2f                   # FIX: forward reference needs 'f'
+    je 2f                   
 
     sub $'0', %rcx
     imul $10, %rax, %rax
     add %rcx, %rax
 
     inc %rsi
-    jmp 1b                  # FIX: backward reference needs 'b'
+    jmp 1b                  
 
 2:
     add %rax, %rax          # double the value
@@ -45,13 +45,13 @@ _start:
     dec %rdi
 
     test %rax, %rax
-    jnz 3b                  # FIX: backward reference
+    jnz 3b                  #backward reference
 
     inc %rdi                # rdi now points to first digit character
 
     # compute length: (buf+31) - rdi
     mov $buf+31, %rcx
-    sub %rdi, %rcx          # FIX: was subtracting rsi from itself (always 0)
+    sub %rdi, %rcx          # was subtracting rsi from itself (always 0)
     mov %rcx, %rdx          # rdx = length
 
     # save number pointer and length
